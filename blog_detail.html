@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>MARKETPLACE</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+
+    <style>
+        /* Navbar */
+        .navbar-dark.bg-dark {
+            background-color: #3F51B5 !important; /* Indigo (Primary) */
+        }
+        
+        /* Sidebar Background */
+        .sb-sidenav {
+            background-color: #212121 !important; /* Dark (Gray) */
+        }
+        
+        /* Sidebar Link Text */
+        .sb-sidenav a {
+            color: #FFFFFF !important; /* Putih */
+        }
+        
+        /* Sidebar Link Hover */
+        .sb-sidenav a:hover {
+            background-color: #E91E63 !important; /* Pink (Secondary) */
+            color: #FFFFFF !important; /* Putih */
+        }
+        
+        /* Tombol */
+        .btn-primary {
+            background-color: #3F51B5 !important; /* Indigo */
+            border-color: #3F51B5 !important;
+        }
+        
+        .btn-primary:hover {
+            background-color: #303F9F !important; /* Indigo lebih gelap */
+        }
+        
+        /* Tombol Sekunder */
+        .btn-secondary {
+            background-color: #E91E63 !important; /* Pink */
+            border-color: #E91E63 !important;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #C2185B !important; /* Pink lebih gelap */
+        }
+        
+        /* Table */
+        .table {
+            background-color: #F5F5F5 !important; /* Light (Gray) */
+            color: #212121 !important; /* Dark */
+        }
+        
+        /* Table Header */
+        .table thead {
+            background-color: #3F51B5 !important; /* Indigo */
+            color: #FFFFFF !important; /* Putih */
+        }
+        
+        /* Background Footer */
+        footer {
+            background-color: #212121 !important; /* Dark */
+            color: #FFFFFF !important; /* Putih */
+        }
+        
+        /* Card Header */
+        .card-header {
+            background-color: #2196F3 !important; /* Blue (Info) */
+            color: #FFFFFF !important; /* Putih */
+        }
+        .info p {
+        display: table;
+        width: 100%;
+        }
+        .info span {
+            display: table-cell;
+            width: 30%; /* Atur lebar label */
+            font-weight: bold;
+        }
+        .info p {
+            margin-bottom: 0.5rem;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+        }
+        </style>
+        
+    <body class="sb-nav-fixed">
+
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Logo Marketplace -->
+            <a class="navbar-brand ps-3" href="index.html">
+                <img src="/assets/img/linux.png" alt="Logo" width="30" height="30"> MARKETPLACE
+            </a>
+            
+            <!-- Navbar Search -->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Cari produk" aria-label="Search for..." aria-describedby="btnNavbarSearch">
+                    <button class="btn btn-outline-secondary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        
+            <!-- Navbar Icons (Messages, Notifications, User) -->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <!-- Messages Icon -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" aria-expanded="false">
+                        <i class="fas fa-comment"></i>
+                    </a>
+                </li>
+        
+                <!-- Notifications Icon -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" aria-expanded="false">
+                        <i class="fas fa-bell"></i>
+                    </a>
+                </li>
+        
+                <!-- User Icon -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" aria-expanded="false">
+                        <i class="fas fa-user"></i> User
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading"></div>
+                            <a class="nav-link active" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Profile
+                            </a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-usd"></i></div>
+                                Keuangan
+                            </a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
+                                Pemesanan
+                            </a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="far fa-comment"></i></div>
+                                Chat
+                            </a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
+                                Pengaturan
+                            </a>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-logout"></i></div>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Post Detail</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/blog.html">Blog</a></li>
+                            <li class="breadcrumb-item active">Post Detail</li>
+                        </ol>
+                        <hr>
+                
+                        <!-- Post Detail -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-danger"> <b>Post Title: Lorem Ipsum</b> </h6>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Posted on:</strong> December 2, 2024</p>
+                                <p><strong>Category:</strong> Technology</p>
+                                <p><strong>Author:</strong> John Doe</p>
+                                <hr>
+                
+                                <!-- Post Content -->
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula ut id elit. Morbi a ipsum at nulla eleifend tristique. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.</p>
+                                <p>Suspendisse potenti. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Morbi egestas, felis eu interdum vehicula, dui risus laoreet lectus, in luctus dui purus ac nulla. Aliquam euismod libero eu purus gravida, sit amet volutpat eros suscipit. Cras lacinia magna sapien, quis lacinia augue convallis quis. Nulla facilisi. Morbi et lacinia lectus. Donec auctor, magna eu vehicula dictum, nisl lectus aliquet urna, eget euismod quam velit id orci. Donec elementum orci in odio condimentum, a vulputate mi vulputate.</p>
+                                <p>Nam vel ligula eu magna vehicula consequat a at justo. Nulla scelerisque arcu vitae diam euismod, sit amet elementum mi suscipit. Nunc vehicula, erat at volutpat ullamcorper, nunc lectus vehicula orci, id fringilla nunc ante id eros. Integer a magna id orci sodales posuere. Etiam quis tortor dolor. Ut vehicula orci a dolor fermentum vestibulum. Nam sit amet erat eget urna feugiat consequat eu ac ligula.</p>
+                
+                                <hr>
+                
+                                <!-- Comments Section (Optional) -->
+                                <h5 class="font-weight-bold">Comments</h5>
+                                <div class="media mb-4">
+                                    <img src="https://via.placeholder.com/50" class="mr-3" alt="User Avatar">
+                                    <div class="media-body">
+                                        <h6 class="mt-0">Jane Doe</h6>
+                                        <p>Great article! I really enjoyed reading it.</p>
+                                    </div>
+                                </div>
+                                <div class="media mb-4">
+                                    <img src="https://via.placeholder.com/50" class="mr-3" alt="User Avatar">
+                                    <div class="media-body">
+                                        <h6 class="mt-0">John Smith</h6>
+                                        <p>Very informative. I learned a lot from this post!</p>
+                                    </div>
+                                </div>
+                
+                                <!-- Comment Form (Optional) -->
+                                <h5 class="font-weight-bold mt-4">Leave a Comment</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="comment" rows="3" placeholder="Write your comment here..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="row">
+                            <!-- Links -->
+                            <div class="col text-center">
+                                <a href="/about.html" class="text-decoration-none me-3">About</a>
+                                <a href="/blog.html" class="text-decoration-none me-3">Blog</a>
+                                <a href="/contact_us.html" class="text-decoration-none me-3">Contact Us</a>
+                                <a href="#" class="text-decoration-none me-3">Cara Kerja</a>
+                                <a href="#" class="text-decoration-none me-3">Menjadi Seller</a>
+                                <a href="#" class="text-decoration-none me-3">FAQ</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Social Media Icons -->
+                            <div class="col text-center mt-3">
+                                <a href="#" class="text-decoration-none me-3">
+                                    <i class="fab fa-facebook fa-lg"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none me-3">
+                                    <i class="fab fa-twitter fa-lg"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none">
+                                    <i class="fab fa-instagram fa-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>                               
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
